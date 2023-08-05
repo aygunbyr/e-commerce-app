@@ -28,7 +28,7 @@ export function Carousel({
   }, [autoSlide, autoSlideInterval, next]);
 
   return (
-    <div className="relative max-h-96 overflow-hidden">
+    <div className="relative max-h-[440px] overflow-hidden">
       <div
         className="flex transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${currentImage * 100}%)` }}
@@ -36,7 +36,7 @@ export function Carousel({
         {images.map((image, key) => (
           <img
             key={key}
-            className="max-h-96 min-w-full object-cover"
+            className="max-h-[440px] min-w-full object-cover"
             src={image}
             alt="Shopping"
           />
