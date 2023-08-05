@@ -8,9 +8,9 @@ export function Card({ title, price, image }) {
       <div className="flex h-60 items-center">
         <img className="ml-auto mr-auto h-48" src={image} alt="Product" />
       </div>
-      <div className="flex w-full flex-1 items-center justify-between gap-1 rounded-sm bg-gray-100 px-2">
+      <div className="flex w-full flex-1 items-center justify-between gap-1 rounded-sm px-2">
         <h2 className="text-lg">{title}</h2>
-        <p className="space-x-2 whitespace-nowrap text-lg font-bold text-blue-500">
+        <p className="space-x-2 whitespace-nowrap text-lg font-bold text-violet-500">
           {price} ₺
         </p>
       </div>

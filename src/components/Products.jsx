@@ -7,6 +7,8 @@ export function Products({ children }) {
   const { isLoading, error, data } = useQuery({
     queryKey: ['products'],
     queryFn: fetchProducts,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
   });
 
   if (isLoading) {
