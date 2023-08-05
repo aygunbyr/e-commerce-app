@@ -9,7 +9,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      'dm-sans': ['DM Sans', 'sans-serif'],
+      inter: ['Inter', 'sans-serif'],
     },
     extend: {},
   },

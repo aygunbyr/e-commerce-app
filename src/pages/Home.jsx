@@ -1,5 +1,7 @@
 import React from 'react';
-import Carousel from '../components/Carousel';
+import { Carousel } from '../components/Carousel';
+import { Card } from '../components/Card';
+import { Cards } from '../components/Cards';
 
 const images = [
   '/assets/pexels-jess-bailey-designs-788946.jpg',
@@ -9,13 +11,16 @@ const images = [
   '/assets/pexels-maryam-7250143.jpg',
 ];
 
-function Home() {
+export function Home() {
   return (
     <>
       <Carousel images={images} autoSlide={true} />
-      Home Page
+      <Cards>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </Cards>
     </>
   );
 }
-
-export default Home;
