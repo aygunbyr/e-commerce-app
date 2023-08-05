@@ -1,7 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-function Carousel({ images, autoSlide = false, autoSlideInterval = 3000 }) {
+export function Carousel({
+  images,
+  autoSlide = false,
+  autoSlideInterval = 3000,
+}) {
   const [currentImage, setCurrentImage] = useState(0);
 
   const prev = () =>
@@ -101,5 +105,3 @@ Carousel.propTypes = {
   autoSlide: PropTypes.bool,
   autoSlideInterval: PropTypes.number,
 };
-
-export default Carousel;

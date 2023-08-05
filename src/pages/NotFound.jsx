@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NotFound() {
+export function NotFound() {
   return (
     <>
       <h1 className="text-3xl font-bold">404 - Not Found</h1>
@@ -8,5 +8,3 @@ function NotFound() {
     </>
   );
 }
-
-export default NotFound;
