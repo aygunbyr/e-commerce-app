@@ -4,7 +4,7 @@ import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 
 export function Card({ title, price, image }) {
   return (
-    <div className="border-1 flex h-[460px] w-72 flex-col gap-1 rounded-lg border border-gray-300 bg-gradient-to-t from-gray-100 to-white px-1 py-1">
+    <div className="border-1 flex h-[460px] w-72 flex-col gap-1 rounded border border-gray-300 bg-gradient-to-t from-gray-100 to-white p-2 shadow">
       <div className="flex h-60 items-center">
         <img className="ml-auto mr-auto h-48" src={image} alt="Product" />
       </div>

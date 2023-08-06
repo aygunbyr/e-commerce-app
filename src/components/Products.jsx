@@ -63,8 +63,10 @@ export function Products({ children }) {
           value={filter}
         >
           <option value="all">All products</option>
-          {categories.map((cat) => (
-            <option value={cat}>{cat}</option>
+          {categories.map((cat, i) => (
+            <option key={i} value={cat}>
+              {cat}
+            </option>
           ))}
         </select>
       </form>
