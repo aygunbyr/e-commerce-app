@@ -5,11 +5,11 @@ import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 export const Header = React.memo(() => {
   return (
     <>
-      <div className="sticky top-0 z-10 bg-purple-300 font-inter text-gray-900">
+      <div className="sticky top-0 z-10 mb-2 bg-rose-400 font-inter text-gray-700 shadow">
         <div className="container mx-auto">
           <header className="flex flex-col items-center space-x-6 px-1 py-1 sm:flex-row">
-            <span className="text-3xl font-bold">E-Commerce</span>
-            <nav className="flex flex-1 items-center gap-2 text-xl">
+            <span className="text-3xl font-bold ">E-Commerce</span>
+            <nav className="mt-2 flex flex-1 items-center gap-10 text-xl sm:mt-0">
               <Link to="/" className="">
                 Home
               </Link>
@@ -19,7 +19,6 @@ export const Header = React.memo(() => {
             </nav>
           </header>
         </div>
-        <div className="h-1 bg-gradient-to-r from-pink-200 via-red-200 to-orange-200 sm:h-1.5"></div>
       </div>
     </>
   );

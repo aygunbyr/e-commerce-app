@@ -1,5 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+.card {
+  @apply flex h-96 w-72 flex-col gap-1 rounded border border-gray-300 bg-gradient-to-t from-gray-100 to-white shadow hover:shadow-lg;
+}
+
+.card-button {
+  @apply mx-2 mb-2 mt-auto flex items-center justify-center gap-1 rounded-md border border-rose-600 bg-transparent p-1 text-sm font-bold uppercase text-rose-600 hover:bg-rose-400 hover:text-white;
+}
+
+.cards-grid {
+  @apply grid scroll-mt-28 grid-cols-1 place-items-center justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.filter-form {
+  @apply w-full space-x-2 rounded-lg bg-rose-400 p-2;
+}

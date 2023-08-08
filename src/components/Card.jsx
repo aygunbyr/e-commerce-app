@@ -1,25 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 
-export function Card({ title, price, image }) {
+export const Card = ({ title, price, image }) => {
   return (
-    <div className="border-1 flex h-[460px] w-72 flex-col gap-1 rounded border border-gray-300 bg-gradient-to-t from-gray-100 to-white p-2 shadow">
-      <div className="flex h-60 items-center">
-        <img className="ml-auto mr-auto h-48" src={image} alt="Product" />
-      </div>
-      <div className="flex w-full flex-1 items-center justify-between gap-1 rounded-sm px-2">
-        <h2 className="text-lg">{title}</h2>
-        <p className="space-x-2 whitespace-nowrap text-lg font-bold text-violet-500">
+    <div className="card">
+      <img
+        className="mx-3 my-2 ml-auto mr-auto h-44 self-center"
+        src={image}
+        alt="Product"
+      />
+      <div className="flex flex-1 flex-col">
+        <h2 className="line-clamp-3 px-2 text-lg uppercase">{title}</h2>
+        <p className="mt-auto self-end whitespace-nowrap px-2 text-3xl font-bold text-gray-700">
           {price} ₺
         </p>
       </div>
-      <button className="flex items-center justify-center gap-1 rounded-md bg-pink-500 p-1 text-gray-100">
+      <button className="card-button">
         <ShoppingCartIcon aria-hidden="true" width={24} /> Add to Cart
       </button>
     </div>
   );
-}
+};
 
 Card.propTypes = {
   title: PropTypes.string,

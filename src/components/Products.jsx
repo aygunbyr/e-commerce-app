@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
+
 import { Card } from './Card';
 import { fetchProducts } from '../services/fakeStoreApi';
 
-export function Products({ children }) {
+export const Products = ({ children }) => {
   const [filter, setFilter] = useState('all');
-  const [filtered, setFiltered] = useState(null);
+  const [filtered, setFilteredProducts] = useState(null);
 
-  const { isLoading, error, data } = useQuery({
+  const {
+    isLoading,
+    error,
+    data: products,
+  } = useQuery({
     queryKey: ['products'],
     queryFn: fetchProducts,
     refetchOnMount: false,
@@ -15,20 +20,22 @@ export function Products({ children }) {
   });
 
   const categories = [
-    'electronics',
-    'jewelery',
-    "men's clothing",
-    "women's clothing",
+    { name: 'electronics', emoji: '💻' },
+    { name: 'jewelery', emoji: '💎' },
+    { name: "men's clothing", emoji: '👔' },
+    { name: "women's clothing", emoji: '👗' },
   ];
 
   useEffect(() => {
     if (filter === 'all') {
-      setFiltered(data?.data);
+      setFilteredProducts(products?.data);
     } else {
-      const newFiltered = data?.data.filter((item) => item.category === filter);
-      setFiltered(newFiltered);
+      const newFiltered = products?.data.filter(
+        (item) => item.category === filter,
+      );
+      setFilteredProducts(newFiltered);
     }
-  }, [filter, data]);
+  }, [filter, products]);
 
   const handleChangeFilter = (e) => {
     setFilter(e.target.value);
@@ -48,11 +55,7 @@ export function Products({ children }) {
 
   return (
     <>
-      <form
-        id="filter"
-        className="w-full space-x-2 rounded-lg bg-purple-200 p-2 text-gray-900"
-        onSubmit={handleSubmit}
-      >
+      <form id="filter" className="filter-form" onSubmit={handleSubmit}>
         <label htmlFor="filter">Filter by: </label>
         <select
           className="rounded p-1 focus:outline-none"
@@ -63,21 +66,18 @@ export function Products({ children }) {
           value={filter}
         >
           <option value="all">All products</option>
-          {categories.map((cat, i) => (
-            <option key={i} value={cat}>
-              {cat}
+          {categories.map((category, index) => (
+            <option key={index} value={category.name}>
+              {category.emoji} {category.name}
             </option>
           ))}
         </select>
       </form>
-      <section
-        id="products"
-        className="grid grid-cols-1 place-items-center justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-      >
+      <section id="products" className="cards-grid">
         {filtered?.map((product) => {
           return <Card key={product.id} {...product} />;
         })}
       </section>
     </>
   );
-}
+};

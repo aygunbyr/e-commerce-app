@@ -1,11 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
+
 import { ArrowLeftIcon, ArrowRightIcon } from './Icons';
-export function Carousel({
+
+export const Carousel = ({
   images,
   autoSlide = false,
   autoSlideInterval = 3000,
-}) {
+}) => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const prev = () =>
@@ -72,7 +74,7 @@ export function Carousel({
       </div>
     </div>
   );
-}
+};
 
 Carousel.propTypes = {
   images: PropTypes.array,
