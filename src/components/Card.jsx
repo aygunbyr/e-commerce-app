@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
 
 import { useCart } from '../context/CartContext';
-// import { TrashIcon } from './Icons';
 
 export const Card = (product) => {
   const { title, price, image } = product;
