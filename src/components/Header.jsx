@@ -11,7 +11,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className="sticky top-0 z-10 mb-2 bg-gray-700 font-inter text-rose-400 shadow">
+      <div className="header">
         <div className="container mx-auto">
           <header className="flex flex-col items-center space-x-6 px-1 py-1 sm:flex-row">
             <span className="text-3xl font-bold ">E-Commerce</span>
@@ -22,7 +22,7 @@ export const Header = () => {
               <Link className="relative ml-auto mr-4" to="/cart">
                 <ShoppingCartIcon width={36} className="relative" />
                 {state.items.length > 0 && (
-                  <span className="absolute right-0 top-0 rounded-full bg-gray-900 px-1 text-sm text-white">
+                  <span className="absolute right-0 top-0 rounded-full bg-gray-100 px-1 text-sm font-bold text-gray-900">
                     {itemCount}
                   </span>
                 )}

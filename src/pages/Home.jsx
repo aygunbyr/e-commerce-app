@@ -1,5 +1,4 @@
-import { Carousel } from '../components/Carousel';
-import { Products } from '../components/Products';
+import { Carousel, Products } from '../components';
 import { images } from '../data/images';
 
 export const Home = () => {

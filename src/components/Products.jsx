@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
-import { Card } from './Card';
+import { Card } from '.';
 import { fetchProducts } from '../api';
 
 export const Products = ({ children }) => {
@@ -56,7 +56,9 @@ export const Products = ({ children }) => {
   return (
     <>
       <form id="filter" className="filter-form" onSubmit={handleSubmit}>
-        <label htmlFor="filter">Filter by: </label>
+        <label htmlFor="filter" className="text-white">
+          Filter by:{' '}
+        </label>
         <select
           className="rounded p-1 focus:outline-none"
           id="filter"

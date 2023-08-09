@@ -1,15 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home } from './pages/Home';
-import { Header } from './components/Header';
-import { ProductDetail } from './pages/ProductDetail';
-import { NotFound } from './pages/NotFound';
-import { Cart } from './pages/Cart';
-import { Footer } from './components/Footer';
+
+import { Footer, Header, ScrollToTop } from './components';
+
+import { Cart, Home, NotFound, ProductDetail } from './pages';
 
 function App() {
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-tl from-gray-100 to-white">
       <Router>
+        <ScrollToTop />
         <Header />
         <main className="container mx-auto mb-12 flex-1 space-y-4 px-1 py-1 font-inter text-gray-700">
           <Routes>
