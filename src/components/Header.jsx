@@ -9,15 +9,9 @@ export const Header = () => {
 
   const itemCount = state.items.length;
 
-  console.log(state.items);
-
-  // dispatch({ type: 'ADD_ITEM', payload: 'elbise 2' });
-
-  // console.log(state.items);
-
   return (
     <>
-      <div className="sticky top-0 z-10 mb-2 bg-rose-400 font-inter text-gray-700 shadow">
+      <div className="sticky top-0 z-10 mb-2 bg-gray-700 font-inter text-rose-400 shadow">
         <div className="container mx-auto">
           <header className="flex flex-col items-center space-x-6 px-1 py-1 sm:flex-row">
             <span className="text-3xl font-bold ">E-Commerce</span>

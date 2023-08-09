@@ -7,16 +7,11 @@ import { useCart } from '../context/CartContext';
 export const Card = (product) => {
   const { title, price, image } = product;
   const { state, dispatch } = useCart();
+  const itemInCart = state.items.some((item) => item.id === product.id);
 
-  const addToCart = () => {
-    dispatch({
-      type: 'ADD_ITEM',
-      payload: product,
-    });
-  };
-
-  const removeItem = () => {
-    dispatch({ type: 'REMOVE_ITEM', payload: product });
+  const toggleCartAction = () => {
+    const actionType = itemInCart ? 'REMOVE_ITEM' : 'ADD_ITEM';
+    dispatch({ type: actionType, payload: product });
   };
 
   return (
@@ -32,16 +27,17 @@ export const Card = (product) => {
           {price} ₺
         </p>
       </div>
-      {!state.items.includes(product) && (
-        <button className="card-button" onClick={addToCart}>
-          <ShoppingCartIcon aria-hidden="true" width={24} /> Add to Cart
-        </button>
-      )}
-      {state.items.includes(product) && (
-        <button className="card-button" onClick={removeItem}>
-          <TrashIcon aria-hidden="true" width={24} /> Remove from Cart
-        </button>
-      )}
+      <button className="card-button" onClick={toggleCartAction}>
+        {itemInCart ? (
+          <>
+            <TrashIcon aria-hidden="true" width={24} /> Remove from Cart
+          </>
+        ) : (
+          <>
+            <ShoppingCartIcon aria-hidden="true" width={24} /> Add to Cart
+          </>
+        )}
+      </button>
     </div>
   );
 };
