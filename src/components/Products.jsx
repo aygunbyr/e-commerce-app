@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import { Card } from './Card';
-import { fetchProducts } from '../services/fakeStoreApi';
+import { fetchProducts } from '../api';
 
 export const Products = ({ children }) => {
   const [filter, setFilter] = useState('all');
