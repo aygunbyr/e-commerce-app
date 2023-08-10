@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     container: {
       screens: {
-        sm: '96%',
+        sm: '94%',
         xl: '1240px',
       },
     },

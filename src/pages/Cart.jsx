@@ -35,8 +35,11 @@ export const Cart = () => {
               </tr>
             </thead>
             <tbody className="flex flex-col">
-              {state.items.map((product) => (
-                <tr className="grid grid-cols-2 items-center border sm:grid-cols-5 sm:border-0">
+              {state.items.map((product, index) => (
+                <tr
+                  key={index}
+                  className="grid grid-cols-2 items-center border sm:grid-cols-5 sm:border-0"
+                >
                   <td className="col-span-2 p-4 sm:col-span-1">
                     <img
                       src={product.image}
