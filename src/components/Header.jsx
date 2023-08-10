@@ -14,7 +14,11 @@ export const Header = () => {
       <div className="header">
         <div className="container mx-auto">
           <header className="flex flex-col items-center space-x-6 px-1 py-1 sm:flex-row">
-            <span className="text-3xl font-bold ">E-Commerce</span>
+            <Link to="/">
+              <span className="text-3xl font-bold text-gray-100">
+                e-commerce
+              </span>
+            </Link>
             <nav className="mt-2 flex flex-1 items-center gap-10 text-xl sm:mt-0">
               <Link to="/" className="font-bold">
                 Home
