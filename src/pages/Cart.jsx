@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ShoppingBagIcon, TrashIcon } from '../components/Icons';
 import { useCart } from '../context/CartContext';
 
@@ -41,11 +42,13 @@ export const Cart = () => {
                   className="grid grid-cols-2 items-center border sm:grid-cols-5 sm:border-0"
                 >
                   <td className="col-span-2 p-4 sm:col-span-1">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="mx-auto w-32 self-center p-4"
-                    />
+                    <Link to={`/product/${product.id}`}>
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="mx-auto w-32 self-center p-4"
+                      />
+                    </Link>
                   </td>
                   <td className="col-span-2 p-4 text-lg font-bold">
                     {product.title}

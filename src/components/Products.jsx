@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
-import { Card } from '.';
+import { Card } from './';
 import { fetchProducts } from '../api';
 
 export const Products = ({ children }) => {
   const [filter, setFilter] = useState('all');
-  const [filtered, setFilteredProducts] = useState(null);
+  const [filtered, setFilteredProducts] = useState([]);
 
   const {
     isLoading,
@@ -28,7 +28,7 @@ export const Products = ({ children }) => {
 
   useEffect(() => {
     if (filter === 'all') {
-      setFilteredProducts(products?.data);
+      setFilteredProducts(products?.data || []);
     } else {
       const newFiltered = products?.data.filter(
         (item) => item.category === filter,
@@ -76,7 +76,7 @@ export const Products = ({ children }) => {
         </select>
       </form>
       <section id="products" className="cards-grid">
-        {filtered?.map((product) => {
+        {filtered.map((product) => {
           return <Card key={product.id} {...product} />;
         })}
       </section>
