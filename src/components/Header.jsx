@@ -12,7 +12,7 @@ export const Header = () => {
   return (
     <>
       <div className="header">
-        <div className="container mx-auto">
+        <div className="container mx-auto max-xl:w-96">
           <header className="flex flex-col items-center space-x-6 px-1 py-1 sm:flex-row">
             <Link to="/">
               <span className="text-3xl font-bold text-gray-100">

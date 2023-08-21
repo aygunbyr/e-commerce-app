@@ -4,13 +4,18 @@ module.exports = {
   theme: {
     container: {
       screens: {
+        sm: '96%',
         xl: '1240px',
       },
     },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      width: {
+        96: '96%',
+      },
+    },
   },
   plugins: [],
 };
