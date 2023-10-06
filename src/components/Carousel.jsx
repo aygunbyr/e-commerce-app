@@ -78,4 +78,9 @@ Carousel.propTypes = {
   autoSlideInterval: PropTypes.number,
 };
 
+Carousel.defaultProps = {
+  autoSlide: false,
+  autoSlideInterval: 3000,
+};
+
 export default Carousel;
