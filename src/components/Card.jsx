@@ -4,7 +4,7 @@ import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
-export const Card = (product) => {
+function Card({ product }) {
   const { title, price, image } = product;
   const { state, dispatch } = useCart();
   const itemInCart = state.items.some((item) => item.id === product.id);
@@ -49,7 +49,7 @@ export const Card = (product) => {
       </div>
     </>
   );
-};
+}
 
 Card.propTypes = {
   product: PropTypes.shape({
@@ -64,3 +64,5 @@ Card.propTypes = {
     }).isRequired,
   }).isRequired,
 };
+
+export default Card;
