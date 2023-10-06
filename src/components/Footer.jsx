@@ -1,4 +1,4 @@
-export const Footer = () => {
+function Footer() {
   return (
     <footer className="h-32 bg-gray-100 p-4">
       <div className="container mx-auto flex flex-col gap-4 max-xl:w-96">
@@ -9,4 +9,6 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}
+
+export default Footer;

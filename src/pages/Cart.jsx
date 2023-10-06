@@ -3,7 +3,7 @@ import { ShoppingBagIcon, TrashIcon } from '../components/Icons';
 import { useCart } from '../context/CartContext';
 import { useMemo } from 'react';
 
-export const Cart = () => {
+function Cart() {
   const { state: cart, dispatch } = useCart();
 
   const removeItem = (product) => {
@@ -93,4 +93,6 @@ export const Cart = () => {
       )}
     </>
   );
-};
+}
+
+export default Cart;

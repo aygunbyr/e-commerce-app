@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
-import { Card } from './';
+import Card from './Card';
 import { fetchProducts } from '../api';
 
-export const Products = ({ children }) => {
+function Products({ children }) {
   const [filter, setFilter] = useState('all');
 
   const {
@@ -19,10 +19,13 @@ export const Products = ({ children }) => {
   });
 
   const filteredProducts = useMemo(() => {
+    if (!products) {
+      return [];
+    }
     if (filter === 'all') {
-      return products?.data || [];
+      return products.data;
     } else {
-      return products?.data.filter((item) => item.category === filter) || [];
+      return products.data.filter((item) => item.category === filter);
     }
   }, [filter, products]);
 
@@ -80,4 +83,6 @@ export const Products = ({ children }) => {
       </section>
     </>
   );
-};
+}
+
+export default Products;

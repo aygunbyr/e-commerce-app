@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 
 import { ArrowLeftIcon, ArrowRightIcon } from './Icons';
 
-export const Carousel = ({
-  images,
-  autoSlide = false,
-  autoSlideInterval = 3000,
-}) => {
+function Carousel({ images, autoSlide = false, autoSlideInterval = 3000 }) {
   const [currentImage, setCurrentImage] = useState(0);
 
   const prev = () =>
@@ -74,10 +70,12 @@ export const Carousel = ({
       </div>
     </div>
   );
-};
+}
 
 Carousel.propTypes = {
-  images: PropTypes.array,
+  images: PropTypes.array.isRequired,
   autoSlide: PropTypes.bool,
   autoSlideInterval: PropTypes.number,
 };
+
+export default Carousel;

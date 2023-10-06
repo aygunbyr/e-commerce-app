@@ -1,8 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { Footer, Header, ScrollToTop } from './components';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import { ScrollToTop } from './components/ScrollToTop';
 
-import { Cart, Home, NotFound, ProductDetail } from './pages';
+import Cart from './pages/Cart';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (

@@ -1,11 +1,14 @@
-import { Carousel, Products } from '../components';
+import Carousel from '../components/Carousel';
+import Products from '../components/Products';
 import { images } from '../data/images';
 
-export const Home = () => {
+function Home() {
   return (
     <>
       <Carousel images={images} autoSlide={true} />
       <Products />
     </>
   );
-};
+}
+
+export default Home;

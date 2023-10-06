@@ -4,7 +4,7 @@ import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 
 import { useCart } from '../context/CartContext';
 
-export const Header = () => {
+function Header() {
   const { state } = useCart();
 
   const itemCount = state.items.length;
@@ -37,4 +37,6 @@ export const Header = () => {
       </div>
     </>
   );
-};
+}
+
+export default Header;

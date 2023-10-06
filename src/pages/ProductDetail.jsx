@@ -5,7 +5,7 @@ import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { useCart } from '../context/CartContext';
 import { fetchProduct } from '../api';
 
-export const ProductDetail = () => {
+function ProductDetail() {
   const { productId } = useParams();
   const { state, dispatch } = useCart();
 
@@ -72,4 +72,6 @@ export const ProductDetail = () => {
       )}
     </div>
   );
-};
+}
+
+export default ProductDetail;
