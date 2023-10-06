@@ -53,14 +53,14 @@ export const Card = (product) => {
 
 Card.propTypes = {
   product: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    price: PropTypes.number,
-    description: PropTypes.string,
-    image: PropTypes.string,
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     rating: PropTypes.shape({
-      rate: PropTypes.number,
-      count: PropTypes.number,
-    }),
-  }),
+      rate: PropTypes.number.isRequired,
+      count: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
 };

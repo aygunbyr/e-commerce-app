@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import { Card } from './';
@@ -6,7 +6,6 @@ import { fetchProducts } from '../api';
 
 export const Products = ({ children }) => {
   const [filter, setFilter] = useState('all');
-  const [filtered, setFilteredProducts] = useState([]);
 
   const {
     isLoading,
@@ -19,6 +18,14 @@ export const Products = ({ children }) => {
     refetchOnWindowFocus: false,
   });
 
+  const filteredProducts = useMemo(() => {
+    if (filter === 'all') {
+      return products?.data || [];
+    } else {
+      return products?.data.filter((item) => item.category === filter) || [];
+    }
+  }, [filter, products]);
+
   const categories = [
     { name: 'electronics', emoji: '💻' },
     { name: 'jewelery', emoji: '💎' },
@@ -26,16 +33,7 @@ export const Products = ({ children }) => {
     { name: "women's clothing", emoji: '👗' },
   ];
 
-  useEffect(() => {
-    if (filter === 'all') {
-      setFilteredProducts(products?.data || []);
-    } else {
-      const newFiltered = products?.data.filter(
-        (item) => item.category === filter,
-      );
-      setFilteredProducts(newFiltered);
-    }
-  }, [filter, products]);
+  useEffect(() => {}, [filter, products]);
 
   const handleChangeFilter = (e) => {
     setFilter(e.target.value);
@@ -76,8 +74,8 @@ export const Products = ({ children }) => {
         </select>
       </form>
       <section id="products" className="cards-grid">
-        {filtered.map((product) => {
-          return <Card key={product.id} {...product} />;
+        {filteredProducts?.map((product) => {
+          return <Card key={product.id} product={product} />;
         })}
       </section>
     </>
