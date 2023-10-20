@@ -1,0 +1,3 @@
+.header {
+  @apply sticky top-0 z-10 mb-2 bg-gray-700 font-inter text-rose-400 shadow;
+}

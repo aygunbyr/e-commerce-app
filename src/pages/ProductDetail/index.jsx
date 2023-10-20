@@ -2,8 +2,9 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
 
-import { useCart } from '../context/CartContext';
-import { fetchProduct } from '../api';
+import styles from './index.module.css';
+import { useCart } from '../../context/CartContext';
+import { fetchProduct } from '../../api';
 
 function ProductDetail() {
   const { productId } = useParams();
@@ -52,7 +53,10 @@ function ProductDetail() {
                 <span className="font-bold">{product.data.rating.rate}</span> (
                 {product.data.rating.count} votes)
               </p>
-              <button className="card-button" onClick={toggleCartAction}>
+              <button
+                className={styles['cart-button']}
+                onClick={toggleCartAction}
+              >
                 {itemInCart ? (
                   <>
                     <TrashIcon aria-hidden="true" width={24} /> Remove from Cart

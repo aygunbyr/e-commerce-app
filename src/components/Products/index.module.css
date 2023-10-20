@@ -1,0 +1,7 @@
+.cards-grid {
+  @apply grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+.filter-form {
+  @apply w-full space-x-2 rounded-lg bg-gray-700 p-2 text-lg;
+}

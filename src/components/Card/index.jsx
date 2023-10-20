@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
-
-import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+
+import { useCart } from '../../context/CartContext';
+import styles from './index.module.css';
 
 function Card({ product }) {
   const { title, price, image } = product;
@@ -16,7 +17,7 @@ function Card({ product }) {
 
   return (
     <>
-      <div className="card">
+      <div className={styles.card}>
         <Link
           className="flex h-96 flex-col"
           key={product.id}
@@ -35,7 +36,7 @@ function Card({ product }) {
             </p>
           </div>
         </Link>
-        <button className="card-button" onClick={toggleCartAction}>
+        <button className={styles['card-button']} onClick={toggleCartAction}>
           {itemInCart ? (
             <>
               <TrashIcon aria-hidden="true" width={24} /> Remove from Cart

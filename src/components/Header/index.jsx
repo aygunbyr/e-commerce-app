@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 
-import { useCart } from '../context/CartContext';
+import { useCart } from '../../context/CartContext';
+import styles from './index.module.css';
 
 function Header() {
   const { state } = useCart();
@@ -11,7 +12,7 @@ function Header() {
 
   return (
     <>
-      <div className="header">
+      <div className={styles.header}>
         <div className="container mx-auto max-xl:w-96">
           <header className="flex flex-col items-center space-x-6 px-1 py-1 sm:flex-row">
             <Link to="/">

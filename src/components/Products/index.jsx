@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
-import Card from './Card';
-import { fetchCategories, fetchProducts } from '../api';
+import Card from '../Card';
+import { fetchCategories, fetchProducts } from '../../api';
+import styles from './index.module.css';
 
 function Products({ children }) {
   const [filter, setFilter] = useState('all');
@@ -58,7 +59,11 @@ function Products({ children }) {
 
   return (
     <>
-      <form id="filter" className="filter-form" onSubmit={handleSubmit}>
+      <form
+        id="filter"
+        className={styles['filter-form']}
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="filter" className="text-white">
           Filter by:{' '}
         </label>
@@ -78,7 +83,7 @@ function Products({ children }) {
           ))}
         </select>
       </form>
-      <section id="products" className="cards-grid">
+      <section id="products" className={styles['cards-grid']}>
         {filteredProducts?.map((product) => {
           return <Card key={product.id} product={product} />;
         })}

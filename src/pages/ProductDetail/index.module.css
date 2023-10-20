@@ -1,0 +1,3 @@
+.cart-button {
+  @apply mx-2 mb-2 mt-auto flex items-center justify-center gap-1 rounded-md border border-rose-600 bg-transparent p-1 text-sm font-bold uppercase text-rose-600 hover:bg-rose-400 hover:text-white;
+}
