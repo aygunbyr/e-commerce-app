@@ -35,7 +35,9 @@ function Cart() {
                 <th className="col-span-2 hidden p-4 sm:block">
                   Product Title
                 </th>
-                <th className="col-span-1 hidden p-4 sm:block">Price</th>
+                <th className="col-span-1 hidden p-4 text-end sm:block">
+                  Price
+                </th>
                 <th className="col-span-1 hidden p-4 sm:block">Action</th>
                 <th className="col-span-5 p-4 text-center sm:hidden">
                   Product
