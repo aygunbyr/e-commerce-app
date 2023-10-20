@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 
 const Slide = ({ imageSrc }) => {
   return (
-    <div style={{ height: '600px', position: 'relative' }}>
+    <div className="h-72 md:h-80 lg:h-[600px]">
       <img
         src={imageSrc}
         alt="Slide"
