@@ -35,16 +35,15 @@ function ProductDetail() {
   }
 
   return (
-    <div className="px-4">
+    <div className="max-w-full px-4">
       {product && (
         <>
-          <h2 className="mt-10 text-3xl">{product.data.title}</h2>
-
-          <div className="flex flex-col items-start gap-10 sm:flex-row">
-            <div className="w-[300px] p-4">
+          <div className="mt-10 flex flex-col items-start gap-10 sm:flex-row">
+            <div className="w-80 max-w-full p-4">
               <img src={product.data.image} alt="product" />
             </div>
-            <div className="flex w-[300px] flex-col gap-4">
+            <div className="flex max-w-full flex-1 flex-col gap-5">
+              <h2 className="text-3xl">{product.data.title}</h2>
               <p className="text-2xl font-bold">{product.data.price} ₺</p>
               <p>{product.data.description}</p>
               <p>Category: {product.data.category}</p>
