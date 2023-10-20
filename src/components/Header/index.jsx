@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 
 import { useCart } from '../../context/CartContext';
 import styles from './index.module.css';
@@ -22,10 +22,10 @@ function Header() {
             </Link>
             <nav className="mt-2 flex flex-1 items-center gap-10 text-xl sm:mt-0">
               <Link to="/" className="font-bold">
-                Home
+                <HomeIcon width={32} />
               </Link>
               <Link className="relative ml-auto mr-4" to="/cart">
-                <ShoppingCartIcon width={36} className="relative" />
+                <ShoppingCartIcon width={32} className="relative" />
                 {state.items.length > 0 && (
                   <span className="absolute right-0 top-0 rounded-full bg-gray-100 px-1 text-sm font-bold text-gray-900">
                     {itemCount}

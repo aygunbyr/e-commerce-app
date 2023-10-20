@@ -5,6 +5,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+import './index.css';
+
 const Slide = ({ imageSrc }) => {
   return (
     <div className="h-72 md:h-80 lg:h-[600px]">

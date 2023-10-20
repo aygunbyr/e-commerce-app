@@ -1,11 +1,9 @@
 function Footer() {
   return (
-    <footer className="h-32 bg-gray-100 p-4">
-      <div className="container mx-auto flex flex-col gap-4 max-xl:w-96">
-        <span className="text-3xl font-bold text-gray-500">E-Commerce</span>
-        <div className="space-y-1 text-gray-900">
-          <h3 className="text-lg">Created by Aygün Bayır</h3>
-        </div>
+    <footer className="h-36 bg-zinc-900 p-4 text-zinc-100">
+      <div className="container mx-auto flex flex-col gap-5 max-xl:w-96">
+        <span className="text-3xl">E-Commerce</span>
+        <span classname="text-2xl">Created by Aygün Bayır</span>
       </div>
     </footer>
   );

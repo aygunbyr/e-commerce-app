@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom';
-import { ShoppingBagIcon, TrashIcon } from '../components/Icons';
-import { useCart } from '../context/CartContext';
 import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { ShoppingBagIcon, TrashIcon } from '@heroicons/react/24/outline';
+
+import styles from './index.module.css';
+import { useCart } from '../../context/CartContext';
 
 function Cart() {
   const { state: cart, dispatch } = useCart();
@@ -21,24 +23,28 @@ function Cart() {
   }, [cart.items]);
 
   return (
-    <>
-      <h2 className="text-3xl">My Cart - {cart.items.length} product(s)</h2>
+    <section id="cart-page" className="mt-8">
+      <h2 className="mb-4 text-3xl font-semibold">
+        My Cart - {cart.items.length} product(s)
+      </h2>
 
-      {cart.items.length === 0 && <p>Cart is empty.</p>}
+      {cart.items.length === 0 && <p className="text-lg">Cart is empty.</p>}
 
       {cart.items.length > 0 && (
         <>
-          <table className="w-full border text-left">
-            <thead className="border">
+          <table className="mb-4 w-full border text-left shadow-sm shadow-zinc-900">
+            <thead className="border bg-zinc-900 text-zinc-100">
               <tr className="grid grid-cols-5">
-                <th className="col-span-1 hidden p-4 sm:block"></th>
-                <th className="col-span-2 hidden p-4 sm:block">
-                  Product Title
+                <th className="col-span-1 hidden p-4 text-center sm:block">
+                  Photo
                 </th>
+                <th className="col-span-2 hidden p-4 sm:block">Product</th>
                 <th className="col-span-1 hidden p-4 text-end sm:block">
                   Price
                 </th>
-                <th className="col-span-1 hidden p-4 sm:block">Action</th>
+                <th className="col-span-1 hidden p-4 text-start sm:block">
+                  Action
+                </th>
                 <th className="col-span-5 p-4 text-center sm:hidden">
                   Product
                 </th>
@@ -55,7 +61,7 @@ function Cart() {
                       <img
                         src={product.image}
                         alt={product.title}
-                        className="mx-auto w-32 self-center p-4"
+                        className="mx-auto w-32 self-center p-4 mix-blend-multiply hover:scale-110"
                       />
                     </Link>
                   </td>
@@ -67,33 +73,30 @@ function Cart() {
                   </td>
                   <td className="col-span-1 p-4">
                     <button
-                      className="flex rounded bg-rose-500 p-2 text-white"
+                      className="min-w-content flex items-center gap-2 rounded bg-zinc-900 p-2 text-white transition-colors duration-300 hover:bg-rose-900"
                       onClick={() => removeItem(product)}
                     >
-                      <TrashIcon aria-hidden="true" />
-                      Delete
+                      <TrashIcon width={24} aria-hidden="true" />
+                      <span>Delete</span>
                     </button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <div className="flex justify-between rounded bg-gray-50 p-4 align-baseline">
-            <button
-              className="mx-auto flex gap-2 rounded-lg bg-gray-900 p-4 text-gray-100"
-              onClick={emptyCart}
-            >
-              <ShoppingBagIcon size={36} aria-hidden="true" />
+          <div className="max-lg: flex flex-wrap items-start justify-between gap-5 rounded bg-gray-50 p-4 align-baseline max-lg:flex-wrap-reverse max-lg:justify-center max-lg:gap-10">
+            <button className={styles['empty-cart-button']} onClick={emptyCart}>
+              <ShoppingBagIcon width={32} aria-hidden="true" />
               <span className="text-lg text-gray-100">Empty cart</span>
             </button>
-            <div>
+            <div className="flex flex-col items-center justify-center md:items-end">
               <p className="text-end text-xl font-bold">Total:</p>
               <h2 className="text-end text-3xl font-bold">{totalPrice} ₺</h2>
             </div>
           </div>
         </>
       )}
-    </>
+    </section>
   );
 }
 

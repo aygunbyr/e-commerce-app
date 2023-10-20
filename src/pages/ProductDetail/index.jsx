@@ -35,12 +35,16 @@ function ProductDetail() {
   }
 
   return (
-    <div className="max-w-full px-4">
+    <div className="max-w-full">
       {product && (
         <>
           <div className="mt-10 flex flex-col items-start gap-10 sm:flex-row">
             <div className="w-80 max-w-full p-4">
-              <img src={product.data.image} alt="product" />
+              <img
+                src={product.data.image}
+                alt="product"
+                className="mix-blend-multiply"
+              />
             </div>
             <div className="flex max-w-full flex-1 flex-col gap-5">
               <h2 className="text-3xl">{product.data.title}</h2>
