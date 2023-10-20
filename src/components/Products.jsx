@@ -14,8 +14,6 @@ function Products({ children }) {
   } = useQuery({
     queryKey: ['products'],
     queryFn: fetchProducts,
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
   });
 
   const filteredProducts = useMemo(() => {

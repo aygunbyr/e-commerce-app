@@ -16,8 +16,6 @@ function ProductDetail() {
   } = useQuery({
     queryKey: ['products', productId],
     queryFn: () => fetchProduct(productId),
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
   });
 
   const itemInCart = state.items.some((item) => item.id === product?.data.id);
