@@ -19,19 +19,21 @@ function Card({ product }) {
     <>
       <div className={styles.card}>
         <Link
-          className="flex h-96 flex-col"
+          className="mt-2 flex h-96 flex-col"
           key={product.id}
           to={`/product/${product.id}`}
         >
           <img
-            className="mx-3 my-2 ml-auto mr-auto h-44 self-center"
+            className="h-1/2 self-center object-contain mix-blend-multiply"
             src={image}
             alt="Product"
           />
 
           <div className="flex flex-1 flex-col">
-            <h2 className="line-clamp-3 px-2 text-lg uppercase">{title}</h2>
-            <p className="mt-auto self-end whitespace-nowrap px-2 text-3xl font-bold text-gray-700">
+            <h2 className="line-clamp-2 px-2 text-lg font-semibold uppercase">
+              {title}
+            </h2>
+            <p className="whitespace-nowrap px-2 text-3xl font-bold text-gray-700">
               {price} ₺
             </p>
           </div>
