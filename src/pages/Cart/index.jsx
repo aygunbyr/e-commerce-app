@@ -61,7 +61,7 @@ function Cart() {
                       <img
                         src={product.image}
                         alt={product.title}
-                        className="mx-auto w-32 self-center p-4 mix-blend-multiply hover:scale-110"
+                        className="mx-auto w-32 self-center p-4 mix-blend-multiply lg:hover:scale-110"
                       />
                     </Link>
                   </td>
