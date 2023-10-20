@@ -1,11 +1,10 @@
-import Carousel from '../components/Carousel';
 import Products from '../components/Products';
-import { images } from '../data/images';
+import SwiperSlider from '../components/SwiperSlider';
 
 function Home() {
   return (
     <>
-      <Carousel images={images} autoSlide={true} />
+      <SwiperSlider />
       <Products />
     </>
   );

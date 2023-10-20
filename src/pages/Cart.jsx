@@ -60,7 +60,7 @@ function Cart() {
                   <td className="col-span-2 p-4 text-lg font-bold">
                     {product.title}
                   </td>
-                  <td className="col-span-1 p-4 text-lg font-bold">
+                  <td className="col-span-1 p-4 text-end text-lg font-bold">
                     {product.price} ₺
                   </td>
                   <td className="col-span-1 p-4">
