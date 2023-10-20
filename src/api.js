@@ -11,3 +11,8 @@ export const fetchProduct = async (productId) => {
   );
   return data;
 };
+
+export const fetchCategories = async () => {
+  const data = await axios.get('https://fakestoreapi.com/products/categories');
+  return data;
+};

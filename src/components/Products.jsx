@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import Card from './Card';
-import { fetchProducts } from '../api';
+import { fetchCategories, fetchProducts } from '../api';
 
 function Products({ children }) {
   const [filter, setFilter] = useState('all');
@@ -16,6 +16,15 @@ function Products({ children }) {
     queryFn: fetchProducts,
   });
 
+  const {
+    isLoadingCategories,
+    errorCategories,
+    data: categories,
+  } = useQuery({
+    queryKey: ['categories'],
+    queryFn: fetchCategories,
+  });
+
   const filteredProducts = useMemo(() => {
     if (!products) {
       return [];
@@ -27,15 +36,6 @@ function Products({ children }) {
     }
   }, [filter, products]);
 
-  const categories = [
-    { name: 'electronics', emoji: '💻' },
-    { name: 'jewelery', emoji: '💎' },
-    { name: "men's clothing", emoji: '👔' },
-    { name: "women's clothing", emoji: '👗' },
-  ];
-
-  useEffect(() => {}, [filter, products]);
-
   const handleChangeFilter = (e) => {
     setFilter(e.target.value);
   };
@@ -44,12 +44,16 @@ function Products({ children }) {
     e.preventDefault();
   };
 
-  if (isLoading) {
+  if (isLoading || isLoadingCategories) {
     return <div>Loading...</div>;
   }
 
   if (error) {
     return <div>An error occured: {error.message}</div>;
+  }
+
+  if (errorCategories) {
+    return <div>An error occured: {errorCategories.message}</div>;
   }
 
   return (
@@ -66,10 +70,10 @@ function Products({ children }) {
           onChange={handleChangeFilter}
           value={filter}
         >
-          <option value="all">All products</option>
-          {categories.map((category, index) => (
-            <option key={index} value={category.name}>
-              {category.emoji} {category.name}
+          <option value="all">All products</option>?
+          {categories?.data.map((category, index) => (
+            <option key={index} value={category}>
+              {category}
             </option>
           ))}
         </select>
