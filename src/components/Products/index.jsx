@@ -9,8 +9,8 @@ function Products({ children }) {
   const [filter, setFilter] = useState('all');
 
   const {
-    isLoading,
-    error,
+    isLoading: isLoadingProducts,
+    error: errorProducts,
     data: products,
   } = useQuery({
     queryKey: ['products'],
@@ -18,8 +18,8 @@ function Products({ children }) {
   });
 
   const {
-    isLoadingCategories,
-    errorCategories,
+    isLoading: isLoadingCategories,
+    error: errorCategories,
     data: categories,
   } = useQuery({
     queryKey: ['categories'],
@@ -45,12 +45,12 @@ function Products({ children }) {
     e.preventDefault();
   };
 
-  if (isLoading || isLoadingCategories) {
+  if (isLoadingProducts || isLoadingCategories) {
     return <div>Loading...</div>;
   }
 
-  if (error) {
-    return <div>An error occured: {error.message}</div>;
+  if (errorProducts) {
+    return <div>An error occured: {errorProducts.message}</div>;
   }
 
   if (errorCategories) {
@@ -76,11 +76,13 @@ function Products({ children }) {
           value={filter}
         >
           <option value="all">All products</option>?
-          {categories?.data.map((category, index) => (
-            <option key={index} value={category}>
-              {category}
-            </option>
-          ))}
+          {Array.isArray(categories)
+            ? categories?.data.map((category, index) => (
+                <option key={index} value={category}>
+                  {category}
+                </option>
+              ))
+            : null}
         </select>
       </form>
       <section id="products" className={styles['cards-grid']}>
