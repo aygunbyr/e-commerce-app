@@ -16,41 +16,39 @@ function Card({ product }) {
   };
 
   return (
-    <>
-      <div className={styles.card}>
-        <Link
-          className="mt-2 flex h-96 flex-col"
-          key={product.id}
-          to={`/product/${product.id}`}
-        >
-          <img
-            className="h-1/2 self-center object-contain mix-blend-multiply"
-            src={image}
-            alt="Product"
-          />
+    <div id="product-card" className={styles.card}>
+      <Link
+        className="mt-2 flex h-96 flex-col"
+        key={product.id}
+        to={`/product/${product.id}`}
+      >
+        <img
+          className="h-1/2 self-center object-contain mix-blend-multiply"
+          src={image}
+          alt="Product"
+        />
 
-          <div className="flex flex-1 flex-col">
-            <h2 className="line-clamp-2 px-2 text-lg font-semibold uppercase">
-              {title}
-            </h2>
-            <p className="whitespace-nowrap px-2 text-3xl font-bold text-gray-700">
-              {price} ₺
-            </p>
-          </div>
-        </Link>
-        <button className={styles['card-button']} onClick={toggleCartAction}>
-          {itemInCart ? (
-            <>
-              <TrashIcon aria-hidden="true" width={24} /> Remove from Cart
-            </>
-          ) : (
-            <>
-              <ShoppingCartIcon aria-hidden="true" width={24} /> Add to Cart
-            </>
-          )}
-        </button>
-      </div>
-    </>
+        <div className="flex flex-1 flex-col">
+          <h2 className="line-clamp-2 px-2 text-lg font-semibold uppercase">
+            {title}
+          </h2>
+          <p className="whitespace-nowrap px-2 text-3xl font-bold text-gray-700">
+            {price} ₺
+          </p>
+        </div>
+      </Link>
+      <button className={styles['card-button']} onClick={toggleCartAction}>
+        {itemInCart ? (
+          <>
+            <TrashIcon aria-hidden="true" width={24} /> Remove from Cart
+          </>
+        ) : (
+          <>
+            <ShoppingCartIcon aria-hidden="true" width={24} /> Add to Cart
+          </>
+        )}
+      </button>
+    </div>
   );
 }
 
