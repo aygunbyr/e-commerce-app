@@ -54,7 +54,7 @@ function Cart() {
               {cart.items.map((product, index) => (
                 <tr
                   key={index}
-                  className="flex items-center max-md:flex-col max-md:gap-2 max-md:border-b max-md:border-b-gray-300"
+                  className="flex items-center border border-b-gray-300 max-md:flex-col max-md:gap-2"
                 >
                   <td className="flex-1 p-4">
                     <Link to={`/product/${product.id}`}>
