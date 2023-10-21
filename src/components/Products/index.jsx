@@ -5,7 +5,7 @@ import Card from '../Card';
 import { fetchCategories, fetchProducts } from '../../api';
 import styles from './index.module.css';
 
-function Products({ children }) {
+function Products() {
   const [filter, setFilter] = useState('all');
 
   const {
