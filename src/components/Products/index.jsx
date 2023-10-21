@@ -76,13 +76,11 @@ function Products({ children }) {
           value={filter}
         >
           <option value="all">All products</option>?
-          {Array.isArray(categories)
-            ? categories?.data.map((category, index) => (
-                <option key={index} value={category}>
-                  {category}
-                </option>
-              ))
-            : null}
+          {categories?.data.map((category, index) => (
+            <option key={index} value={category}>
+              {category}
+            </option>
+          ))}
         </select>
       </form>
       <section id="products" className={styles['cards-grid']}>
