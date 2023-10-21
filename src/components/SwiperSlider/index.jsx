@@ -1,3 +1,4 @@
+import { useWindowSize } from '@uidotdev/usehooks';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -25,6 +26,8 @@ const Slide = ({ imageSrc }) => {
 };
 
 const SwiperSlider = () => {
+  const { width } = useWindowSize();
+
   return (
     <Swiper
       className="mySwiper"
@@ -37,7 +40,7 @@ const SwiperSlider = () => {
       pagination={{
         clickable: true,
       }}
-      navigation={false}
+      navigation={width >= 768}
       modules={[Autoplay, Pagination, Navigation]}
     >
       <SwiperSlide>
