@@ -38,36 +38,25 @@ function Cart() {
 
       {cart.items.length > 0 && (
         <>
-          <table className="mb-4 w-full border text-left shadow-sm shadow-zinc-900">
-            <thead className="border bg-zinc-900 text-zinc-100">
-              <tr className="grid grid-cols-6">
-                <th className="col-span-1 hidden p-4 text-center sm:block">
-                  Photo
-                </th>
-                <th className="col-span-6 hidden p-4 sm:col-span-2 sm:block">
-                  Product
-                </th>
-                <th className="col-span-1 hidden p-4 text-center sm:block">
-                  Price
-                </th>
-                <th className="col-span-1 hidden p-4 text-center sm:block">
+          <table className="mb-4 w-full overflow-hidden rounded-md border border-zinc-500 text-left md:shadow-md md:shadow-zinc-500">
+            <thead className="bg-zinc-900 text-zinc-100">
+              <tr className="flex">
+                <th className="flex-1 p-4 text-center max-md:hidden">Photo</th>
+                <th className="flex-1 p-4 text-start max-md:hidden">Product</th>
+                <th className="flex-1 p-4 text-center max-md:hidden">Price</th>
+                <th className="flex-1 p-4 text-center max-md:hidden">
                   Quantity
                 </th>
-                <th className="col-span-1 hidden p-4 text-start sm:block">
-                  Action
-                </th>
-                {/* <th className="col-span-6 p-4 text-center sm:hidden">
-                  Product
-                </th> */}
+                <th className="flex-1 p-4 text-start max-md:hidden">Action</th>
               </tr>
             </thead>
             <tbody className="flex flex-col">
               {cart.items.map((product, index) => (
                 <tr
                   key={index}
-                  className="grid grid-cols-2 items-center border sm:grid-cols-6 sm:border-0"
+                  className="flex items-center max-md:flex-col max-md:gap-2 max-md:border-b max-md:border-b-gray-300"
                 >
-                  <td className="col-span-2 p-4 sm:col-span-1">
+                  <td className="flex-1 p-4">
                     <Link to={`/product/${product.id}`}>
                       <img
                         src={product.image}
@@ -76,13 +65,13 @@ function Cart() {
                       />
                     </Link>
                   </td>
-                  <td className="col-span-2 p-4 text-lg font-bold">
+                  <td className="flex-1 p-4 text-lg font-bold">
                     {product.title}
                   </td>
-                  <td className="col-span-1 p-4 text-center text-lg font-bold">
+                  <td className="flex-1 p-4 text-center text-lg font-bold">
                     {product.price} ₺
                   </td>
-                  <td className="col-span-1 flex items-center justify-center gap-4 p-4 text-center text-lg font-bold">
+                  <td className="flex flex-1 items-center justify-center gap-4 p-4 text-center text-lg font-bold">
                     <button
                       className="rounded-sm bg-red-700 p-0.5 text-white shadow-red-700 transition-all duration-200 lg:hover:bg-red-600 lg:hover:shadow-red-600"
                       onClick={() =>
@@ -101,9 +90,9 @@ function Cart() {
                       <PlusIcon width={24} className="" />
                     </button>
                   </td>
-                  <td className="col-span-1 p-4">
+                  <td className="flex-1 p-4">
                     <button
-                      className="min-w-content flex items-center gap-2 rounded bg-zinc-900 p-2 text-white transition-colors duration-200 lg:hover:bg-rose-900"
+                      className="min-w-content flex w-full items-center justify-center gap-2 rounded bg-zinc-900 p-2 text-white transition-colors duration-200 lg:hover:bg-rose-900"
                       onClick={() => removeItem(product)}
                     >
                       <TrashIcon width={24} aria-hidden="true" />
