@@ -4,24 +4,54 @@ const initialState = {
   items: [],
 };
 
+const ADD_ITEM = 'ADD_ITEM';
+const REMOVE_ITEM = 'REMOVE_ITEM';
+const EMPTY_CART = 'EMPTY_CART';
+const INCREASE_QTY = 'INCREASE_QTY';
+const DECREASE_QTY = 'DECREASE_QTY';
+
 const cartReducer = (state, action) => {
   switch (action.type) {
-    case 'ADD_ITEM':
+    case ADD_ITEM:
       return {
         ...state,
-        items: [...state.items, action.payload],
+        items: [...state.items, { ...action.payload, quantity: 1 }],
       };
 
-    case 'REMOVE_ITEM':
+    case REMOVE_ITEM:
       return {
         ...state,
         items: state.items.filter((item) => item.id !== action.payload.id),
       };
 
-    case 'EMPTY_CART':
+    case EMPTY_CART:
       return {
         ...state,
         items: [],
+      };
+
+    case INCREASE_QTY:
+      return {
+        ...state,
+        items: state.items.map((item) => {
+          if (item.id === action.payload) {
+            return { ...item, quantity: item.quantity + 1 };
+          }
+          return item;
+        }),
+      };
+
+    case DECREASE_QTY:
+      return {
+        ...state,
+        items: state.items
+          .map((item) => {
+            if (item.id === action.payload) {
+              return { ...item, quantity: item.quantity - 1 };
+            }
+            return item;
+          })
+          .filter((item) => item.quantity > 0),
       };
 
     default:
