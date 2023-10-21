@@ -35,7 +35,7 @@ function ProductDetail() {
   }
 
   return (
-    <div className="max-w-full">
+    <section id="page-product-detail" className="max-w-full">
       {product && (
         <>
           <div className="mt-10 flex flex-col items-start gap-10 sm:flex-row">
@@ -75,7 +75,7 @@ function ProductDetail() {
           </div>
         </>
       )}
-    </div>
+    </section>
   );
 }
 

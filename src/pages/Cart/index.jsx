@@ -23,7 +23,7 @@ function Cart() {
   }, [cart.items]);
 
   return (
-    <section id="cart-page" className="mt-8">
+    <section id="page-cart" className="mt-8">
       <h2 className="mb-4 text-3xl font-semibold">
         My Cart - {cart.items.length} product(s)
       </h2>
