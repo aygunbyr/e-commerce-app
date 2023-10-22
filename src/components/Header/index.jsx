@@ -18,7 +18,7 @@ function Header() {
             <span className="text-3xl font-bold text-gray-100">e-commerce</span>
           </Link>
           <nav className="mt-2 flex flex-1 items-center gap-10 text-xl sm:mt-0">
-            <Link to="/" className="font-bold">
+            <Link to="/">
               <HomeIcon width={32} />
             </Link>
             <Link className="relative ml-auto mr-4" to="/cart">
