@@ -28,8 +28,8 @@ function Card({ product }) {
           alt="Product"
         />
 
-        <div className="flex flex-1 flex-col">
-          <h2 className="line-clamp-2 px-2 text-lg font-semibold uppercase">
+        <div className="absolute bottom-20 flex flex-1 flex-col">
+          <h2 className="line-clamp-2 px-2 text-lg font-medium uppercase">
             {title}
           </h2>
           <p className="whitespace-nowrap px-2 text-3xl font-bold text-gray-700">

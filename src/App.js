@@ -12,11 +12,11 @@ const ProductDetail = lazy(() => import('./pages/ProductDetail'));
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-gray-50">
+    <div className="flex min-h-screen flex-col bg-gray-50 font-inter">
       <Router>
         <ScrollToTop />
         <Header />
-        <main className="container mx-auto mb-20 flex-1 space-y-4 px-1 py-1 font-inter text-gray-700 max-xl:w-96">
+        <main className="container mb-20 flex-1 space-y-4 px-1 py-1 text-gray-900 max-xl:w-96">
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route path="/" element={<Home />} />

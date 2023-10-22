@@ -11,8 +11,8 @@ function Header() {
   const itemCount = state.items.length;
 
   return (
-    <section id="section-header" className={styles.header}>
-      <div className="container mx-auto max-xl:w-96">
+    <div className={styles.header}>
+      <div className="container max-xl:w-96">
         <header className="flex flex-col items-center space-x-6 px-1 py-1 sm:flex-row">
           <Link to="/">
             <span className="text-3xl font-bold text-gray-100">e-commerce</span>
@@ -32,7 +32,7 @@ function Header() {
           </nav>
         </header>
       </div>
-    </section>
+    </div>
   );
 }
 
