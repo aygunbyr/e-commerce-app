@@ -78,7 +78,7 @@ function Cart() {
                         dispatch({ type: 'DECREASE_QTY', payload: product.id })
                       }
                     >
-                      <MinusIcon width={24} className="" />
+                      <MinusIcon width={24} />
                     </button>
                     {product.quantity} Pcs.
                     <button
@@ -87,7 +87,7 @@ function Cart() {
                         dispatch({ type: 'INCREASE_QTY', payload: product.id })
                       }
                     >
-                      <PlusIcon width={24} className="" />
+                      <PlusIcon width={24} />
                     </button>
                   </td>
                   <td className="flex-1 p-4">
@@ -96,7 +96,7 @@ function Cart() {
                       onClick={() => removeItem(product)}
                     >
                       <TrashIcon width={24} aria-hidden="true" />
-                      Delete
+                      Remove
                     </button>
                   </td>
                 </tr>

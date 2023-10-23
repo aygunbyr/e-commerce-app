@@ -23,7 +23,7 @@ function Header() {
             </Link>
             <Link className="relative ml-auto mr-4" to="/cart">
               <ShoppingCartIcon width={32} />
-              {state.items.length > 0 && (
+              {itemCount > 0 && (
                 <span className="absolute right-0 top-0 rounded-full bg-gray-100 px-1 text-sm font-bold text-gray-900">
                   {itemCount}
                 </span>
