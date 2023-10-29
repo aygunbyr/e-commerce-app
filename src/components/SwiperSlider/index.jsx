@@ -10,7 +10,7 @@ import './index.css';
 
 const Slide = ({ imageSrc }) => {
   return (
-    <div className="h-72 md:h-80 lg:h-[600px]">
+    <div className="h-72 md:h-80 xl:h-[600px]">
       <img
         src={imageSrc}
         alt="Slide"
