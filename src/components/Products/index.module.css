@@ -3,5 +3,5 @@
 }
 
 .filter-form {
-  @apply w-full space-x-2 rounded-lg bg-zinc-900 p-2 text-lg;
+  @apply flex w-full items-center justify-between space-x-2 rounded-lg bg-zinc-900 p-2 text-lg;
 }

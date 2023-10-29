@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { ShoppingCartIcon as ShoppingCartIconSolid } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
 
