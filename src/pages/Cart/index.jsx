@@ -103,7 +103,7 @@ function Cart() {
               ))}
             </tbody>
           </table>
-          <div className="max-lg: flex flex-wrap items-start justify-between gap-5 rounded bg-gray-50 p-4 align-baseline max-lg:flex-wrap-reverse max-lg:justify-center max-lg:gap-10">
+          <div className="flex flex-wrap items-start justify-between gap-5 rounded bg-gray-50 p-4 align-baseline max-lg:flex-wrap-reverse max-lg:justify-center max-lg:gap-10">
             <button
               className={styles['empty-cart-button']}
               onClick={() => {
@@ -114,7 +114,7 @@ function Cart() {
               <ShoppingBagIcon width={32} aria-hidden="true" />
               <span className="text-lg text-gray-100">Checkout</span>
             </button>
-            <div className="flex flex-col items-center justify-center md:items-end">
+            <div className="flex w-full flex-col items-center justify-center sm:w-1/3 md:items-end">
               <p className="text-end text-xl font-bold">Total:</p>
               <h2 className="text-end text-3xl font-bold">{totalPrice} ₺</h2>
             </div>
