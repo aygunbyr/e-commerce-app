@@ -73,6 +73,7 @@ function Cart() {
                   </td>
                   <td className="flex flex-1 items-center justify-center gap-4 p-4 text-center text-lg font-bold">
                     <button
+                      aria-label={`Decrease quantity of product ${product.title}`}
                       className="rounded-sm bg-red-700 p-0.5 text-white shadow-red-700 transition-all duration-200 xl:hover:bg-red-600 xl:hover:shadow-red-600"
                       onClick={() =>
                         dispatch({ type: 'DECREASE_QTY', payload: product.id })
@@ -82,6 +83,7 @@ function Cart() {
                     </button>
                     {product.quantity} Pcs.
                     <button
+                      aria-label={`Increase quantity of product ${product.title}`}
                       className="rounded-sm bg-green-700 p-0.5 text-white shadow shadow-green-700 transition-all duration-200 xl:hover:bg-green-600 xl:hover:shadow-green-600"
                       onClick={() =>
                         dispatch({ type: 'INCREASE_QTY', payload: product.id })
@@ -92,6 +94,7 @@ function Cart() {
                   </td>
                   <td className="flex-1 p-4">
                     <button
+                      aria-label={`Remove product from cart`}
                       className="min-w-content flex w-full items-center justify-center gap-2 rounded bg-zinc-900 p-2 text-white transition-colors duration-200 xl:hover:bg-rose-900"
                       onClick={() => removeItem(product)}
                     >
@@ -105,6 +108,7 @@ function Cart() {
           </table>
           <div className="flex flex-wrap items-start justify-between gap-5 rounded bg-gray-50 p-4 align-baseline max-xl:flex-wrap-reverse max-xl:justify-center max-xl:gap-10">
             <button
+              aria-label="Checkout"
               className={styles['empty-cart-button']}
               onClick={() => {
                 emptyCart();

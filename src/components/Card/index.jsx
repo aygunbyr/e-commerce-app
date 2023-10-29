@@ -35,6 +35,9 @@ function Card({ product }) {
       </Link>
       <button
         className={`${styles['card-button']} group-hover:flex`}
+        aria-label={
+          itemInCart ? 'Remove product from cart' : 'Add product to cart'
+        }
         onClick={toggleCartAction}
       >
         {itemInCart ? (

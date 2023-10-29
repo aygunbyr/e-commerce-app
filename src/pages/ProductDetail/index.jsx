@@ -57,6 +57,7 @@ function ProductDetail() {
                 {product.data.rating.count} votes)
               </p>
               <button
+                aria-label="Go to cart page"
                 className={styles['cart-button']}
                 onClick={toggleCartAction}
               >
