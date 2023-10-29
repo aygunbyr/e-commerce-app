@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { ShoppingCartIcon as ShoppingCartIconSolid } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
 
 import { useCart } from '../../context/CartContext';
@@ -16,35 +17,33 @@ function Card({ product }) {
   };
 
   return (
-    <div id="product-card" className={styles.card}>
+    <div id="product-card" className={`${styles.card} group`}>
       <Link
-        className="mt-2 flex h-96 flex-col"
+        className="mt-2 flex flex-col"
         key={product.id}
         to={`/product/${product.id}`}
       >
         <img
-          className="h-1/2 self-center object-contain mix-blend-multiply"
+          className="h-36 self-center object-cover mix-blend-multiply"
           src={image}
           alt="Product"
         />
-
-        <div className="absolute bottom-20 flex flex-1 flex-col">
-          <h2 className="line-clamp-2 px-2 text-lg font-medium uppercase">
-            {title}
-          </h2>
-          <p className="whitespace-nowrap px-2 text-3xl font-bold text-gray-700">
-            {price} ₺
-          </p>
+        <div className="absolute top-40 flex flex-1 flex-col">
+          <h2 className="line-clamp-1 text-lg font-medium">{title}</h2>
+          <p className="whitespace-nowrap text-2xl font-bold">{price} ₺</p>
         </div>
       </Link>
-      <button className={styles['card-button']} onClick={toggleCartAction}>
+      <button
+        className={`${styles['card-button']} group-hover:flex`}
+        onClick={toggleCartAction}
+      >
         {itemInCart ? (
           <>
-            <TrashIcon aria-hidden="true" width={24} /> Remove from Cart
+            <ShoppingCartIconSolid aria-hidden="true" width={20} />
           </>
         ) : (
           <>
-            <ShoppingCartIcon aria-hidden="true" width={24} /> Add to Cart
+            <ShoppingCartIcon aria-hidden="true" width={20} />
           </>
         )}
       </button>
