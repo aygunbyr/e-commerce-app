@@ -58,12 +58,13 @@ function Cart() {
                 >
                   <td className="flex-1 p-4">
                     <Link
-                      aria-label="Go to product details page"
+                      aria-label={product.title}
                       to={`/product/${product.id}`}
                     >
                       <img
                         src={product.image}
                         alt={product.title}
+                        aria-label={product.title}
                         className="mx-auto w-32 self-center p-4 mix-blend-multiply xl:hover:scale-105"
                       />
                     </Link>

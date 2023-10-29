@@ -19,7 +19,7 @@ function Card({ product }) {
   return (
     <div id="product-card" className={`${styles.card} group`}>
       <Link
-        aria-label="Go to product details page"
+        aria-label={product.title}
         className="mt-2 flex flex-col"
         key={product.id}
         to={`/product/${product.id}`}

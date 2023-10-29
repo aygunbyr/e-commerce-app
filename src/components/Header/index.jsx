@@ -14,7 +14,7 @@ function Header() {
     <header className={styles.header}>
       <div className="container max-xl:w-96">
         <div className="flex flex-col items-center space-x-6 px-1 py-1 sm:flex-row">
-          <Link to="/" aria-label="Go to home page">
+          <Link to="/" aria-label="e-commerce">
             <span className="text-3xl font-bold text-gray-100">e-commerce</span>
           </Link>
           <nav className="mt-2 flex flex-1 items-center gap-10 text-xl sm:mt-0">
