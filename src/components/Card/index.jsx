@@ -27,7 +27,8 @@ function Card({ product }) {
         <img
           className="h-36 self-center object-cover mix-blend-multiply"
           src={image}
-          alt="Product"
+          alt={product.title}
+          aria-label={product.title}
         />
         <div className="absolute top-40 flex flex-1 flex-col">
           <h2 className="line-clamp-1 text-lg font-medium">{title}</h2>
