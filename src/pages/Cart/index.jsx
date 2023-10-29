@@ -57,7 +57,10 @@ function Cart() {
                   className="flex items-center border border-b-gray-300 max-md:flex-col max-md:gap-2"
                 >
                   <td className="flex-1 p-4">
-                    <Link to={`/product/${product.id}`}>
+                    <Link
+                      aria-label="Go to product details page"
+                      to={`/product/${product.id}`}
+                    >
                       <img
                         src={product.image}
                         alt={product.title}

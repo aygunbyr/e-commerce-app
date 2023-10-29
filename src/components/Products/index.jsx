@@ -67,23 +67,23 @@ function Products() {
   return (
     <>
       <form
-        id="filter"
+        id="filter-form"
         className={styles['filter-form']}
         onSubmit={handleSubmit}
       >
         <div className="flex items-center gap-2 self-start">
-          <label htmlFor="filter" className="w-20 min-w-fit text-white">
+          <label htmlFor="filter-select" className="w-20 min-w-fit text-white">
             Filter by:
           </label>
           <select
             className="rounded p-1 focus:outline-none"
-            id="filter"
+            id="filter-select"
             name="filter"
             type="text"
             onChange={(e) => setFilter(e.target.value)}
             value={filter}
           >
-            <option value="all">All products</option>?
+            <option value="all">All Categories</option>?
             {categories?.data.map((category, index) => (
               <option key={index} value={category}>
                 {toCapitalCase(category)}
