@@ -3,5 +3,5 @@
 }
 
 .filter-form {
-  @apply flex w-full items-center justify-between space-x-2 rounded-lg bg-zinc-900 p-2 text-lg;
+  @apply flex w-full flex-col items-center justify-between gap-4 rounded-lg bg-zinc-900 p-2 text-lg sm:flex-row sm:gap-0;
 }

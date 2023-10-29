@@ -71,8 +71,8 @@ function Products() {
         className={styles['filter-form']}
         onSubmit={handleSubmit}
       >
-        <div className="flex items-center gap-2">
-          <label htmlFor="filter" className="text-white">
+        <div className="flex items-center gap-2 self-start">
+          <label htmlFor="filter" className="w-20 min-w-fit text-white">
             Filter by:
           </label>
           <select
@@ -91,9 +91,12 @@ function Products() {
             ))}
           </select>
         </div>
-        <div className="flex items-center gap-2">
-          <label htmlFor="search" className="text-white">
-            &nbsp;
+        <div className="flex items-center gap-2 self-start">
+          <label
+            htmlFor="search"
+            className="w-20 min-w-fit text-white sm:hidden"
+          >
+            Search:
           </label>
           <input
             className="rounded p-0.5 focus:outline-none"
