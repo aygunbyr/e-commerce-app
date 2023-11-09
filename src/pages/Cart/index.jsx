@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MinusIcon,
@@ -6,6 +6,8 @@ import {
   ShoppingBagIcon,
   TrashIcon,
 } from '@heroicons/react/24/outline';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import styles from './index.module.css';
 import { useCart } from '../../context/CartContext';
@@ -15,10 +17,12 @@ function Cart() {
 
   const removeItem = (product) => {
     dispatch({ type: 'REMOVE_ITEM', payload: product });
+    toast.error(`${product.title} removed from cart 🛒`);
   };
 
-  const emptyCart = () => {
+  const checkout = () => {
     dispatch({ type: 'EMPTY_CART' });
+    toast.success('Your products have been shipped');
   };
 
   const totalPrice = useMemo(() => {
@@ -29,6 +33,7 @@ function Cart() {
 
   return (
     <section id="page-cart" className="mt-8">
+      <ToastContainer position="top-center" theme="dark" hideProgressBar />
       <h2 className="mb-4 text-3xl font-semibold">My Cart</h2>
       <h3 className="mb-4 text-xl">
         {cart.items.length > 0
@@ -114,10 +119,7 @@ function Cart() {
             <button
               aria-label="Checkout"
               className={styles['empty-cart-button']}
-              onClick={() => {
-                emptyCart();
-                alert('Your products have been shipped');
-              }}
+              onClick={() => checkout()}
             >
               <ShoppingBagIcon width={32} aria-hidden="true" />
               <span className="text-lg text-gray-100">Checkout</span>

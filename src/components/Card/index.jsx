@@ -1,7 +1,10 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { ShoppingCartIcon as ShoppingCartIconSolid } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { useCart } from '../../context/CartContext';
 import styles from './index.module.css';
@@ -13,11 +16,15 @@ function Card({ product }) {
 
   const toggleCartAction = () => {
     const actionType = itemInCart ? 'REMOVE_ITEM' : 'ADD_ITEM';
+    itemInCart
+      ? toast.error(`${title} removed from cart 🛒`)
+      : toast.success(`${title} added to cart 🛒`);
     dispatch({ type: actionType, payload: product });
   };
 
   return (
     <div id="product-card" className={`${styles.card} group`}>
+      <ToastContainer position="top-center" theme="dark" hideProgressBar />
       <Link
         aria-label={product.title}
         className="mt-2 flex flex-col"
