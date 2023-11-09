@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { ShoppingCartIcon as ShoppingCartIconSolid } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 import { useCart } from '../../context/CartContext';
-import styles from './index.module.css';
+import styles from './styles.module.css';
 
 function Card({ product }) {
   const { title, price, image } = product;
@@ -24,7 +23,6 @@ function Card({ product }) {
 
   return (
     <div id="product-card" className={`${styles.card} group`}>
-      <ToastContainer position="top-center" theme="dark" hideProgressBar />
       <Link
         aria-label={product.title}
         className="mt-2 flex flex-col"

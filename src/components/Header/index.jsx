@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { HomeIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 
 import { useCart } from '../../context/CartContext';
-import styles from './index.module.css';
 
 function Header() {
   const { state } = useCart();
@@ -11,7 +10,7 @@ function Header() {
   const itemCount = state.items.length;
 
   return (
-    <header className={styles.header}>
+    <header className="sticky top-0 z-10 mb-2 bg-zinc-900 font-inter text-rose-500 shadow-md shadow-zinc-900">
       <div className="container max-xl:w-96">
         <div className="flex flex-col items-center space-x-6 px-1 py-1 sm:flex-row">
           <Link to="/" aria-label="e-commerce">

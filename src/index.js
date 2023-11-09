@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { CartContextProvider } from './context/CartContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,6 +24,7 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <CartContextProvider>
         <App />
+        <ToastContainer position="top-center" theme="dark" hideProgressBar />
       </CartContextProvider>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>

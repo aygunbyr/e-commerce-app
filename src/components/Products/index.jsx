@@ -3,7 +3,6 @@ import { useQuery } from '@tanstack/react-query';
 
 import Card from '../Card';
 import { fetchCategories, fetchProducts } from '../../api';
-import styles from './index.module.css';
 import { toCapitalCase } from '../../utils';
 
 function Products() {
@@ -68,7 +67,7 @@ function Products() {
     <>
       <form
         id="filter-form"
-        className={styles['filter-form']}
+        className="flex flex-col items-center justify-between gap-4 rounded-lg bg-zinc-900 p-2 text-lg sm:flex-row sm:gap-0"
         onSubmit={handleSubmit}
       >
         <div className="flex items-center gap-2 self-start">
@@ -109,10 +108,10 @@ function Products() {
           />
         </div>
       </form>
-      <section id="products" className={styles['cards-grid']}>
+      <section id="products" className="flex flex-wrap">
         {filteredProducts?.map((product) => {
           return (
-            <div className={styles['flex-item']}>
+            <div className="basis-full p-2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
               <Card key={product.id} product={product} />
             </div>
           );

@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { toast } from 'react-toastify';
 
-import styles from './index.module.css';
+import styles from './styles.module.css';
 import { useCart } from '../../context/CartContext';
 import { fetchProduct } from '../../api';
 
@@ -23,6 +24,9 @@ function ProductDetail() {
 
   const toggleCartAction = () => {
     const actionType = itemInCart ? 'REMOVE_ITEM' : 'ADD_ITEM';
+    itemInCart
+      ? toast.error(`${product.data.title} removed from cart 🛒`)
+      : toast.success(`${product.data.title} added to cart 🛒`);
     dispatch({ type: actionType, payload: product.data });
   };
 

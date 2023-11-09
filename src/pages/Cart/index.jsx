@@ -6,10 +6,9 @@ import {
   ShoppingBagIcon,
   TrashIcon,
 } from '@heroicons/react/24/outline';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
-import styles from './index.module.css';
+import styles from './styles.module.css';
 import { useCart } from '../../context/CartContext';
 
 function Cart() {
@@ -33,7 +32,6 @@ function Cart() {
 
   return (
     <section id="page-cart" className="mt-8">
-      <ToastContainer position="top-center" theme="dark" hideProgressBar />
       <h2 className="mb-4 text-3xl font-semibold">My Cart</h2>
       <h3 className="mb-4 text-xl">
         {cart.items.length > 0
