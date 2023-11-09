@@ -99,7 +99,7 @@ function Products() {
             Search:
           </label>
           <input
-            className="rounded p-0.5 focus:outline-none"
+            className="max-w-fit rounded p-0.5 focus:outline-none"
             id="search"
             name="search"
             type="text"
@@ -111,7 +111,11 @@ function Products() {
       </form>
       <section id="products" className={styles['cards-grid']}>
         {filteredProducts?.map((product) => {
-          return <Card key={product.id} product={product} />;
+          return (
+            <div className={styles['flex-item']}>
+              <Card key={product.id} product={product} />
+            </div>
+          );
         })}
       </section>
     </>

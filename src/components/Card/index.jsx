@@ -37,9 +37,15 @@ function Card({ product }) {
           alt={product.title}
           aria-label={product.title}
         />
-        <div className="absolute top-40 flex flex-1 flex-col">
-          <h2 className="line-clamp-1 text-lg font-medium">{title}</h2>
-          <p className="whitespace-nowrap text-2xl font-bold">{price} ₺</p>
+        <div className="absolute top-44">
+          <h2 className="line-clamp-2 text-[18px] font-medium leading-tight">
+            {title}
+          </h2>
+        </div>
+        <div className="absolute top-56">
+          <p className="whitespace-nowrap text-[28px] font-bold leading-tight">
+            {price} ₺
+          </p>
         </div>
       </Link>
       <button

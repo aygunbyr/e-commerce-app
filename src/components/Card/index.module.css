@@ -1,5 +1,5 @@
 .card {
-  @apply relative box-border flex h-60 w-auto flex-col gap-1 rounded border border-gray-300 bg-gray-100 p-2 shadow-sm transition-all duration-200 xl:hover:shadow-md xl:hover:shadow-zinc-700;
+  @apply relative flex h-[270px] w-full flex-col gap-1 rounded border border-gray-300 bg-gray-100 p-2 shadow-sm transition-all duration-200 xl:hover:shadow-md xl:hover:shadow-zinc-700;
 }
 
 .card-button {
